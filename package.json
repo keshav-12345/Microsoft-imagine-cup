@@ -1,0 +1,31 @@
+{
+  "name": "authdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "naveen",
+  "license": "ISC",
+  "dependencies": {
+    "alert": "^5.0.10",
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "fetch": "^1.1.0",
+    "font-awesome": "^4.7.0",
+    "mongoose": "^5.9.27",
+    "multer": "^1.4.4",
+    "node-fetch": "^3.1.0",
+    "nodemon": "^2.0.15",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "request": "^2.88.2",
+    "sequelize": "^7.0.0-alpha.4"
+  }
+}

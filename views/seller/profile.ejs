@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>Krishi Vyahan- Farm Services &amp; Organic Food Store Template | News</title>
+
+<link rel="icon" href="img/core-img/favicon.jpg">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="preloader d-flex align-items-center justify-content-center">
+<div class="spinner"></div>
+</div>
+
+<header class="header-area">
+
+  <div class="top-header-area">
+  <div class="container">
+  <div class="row">
+  <div class="col-12">
+  <div class="top-header-content d-flex align-items-center justify-content-between">
+  
+  <div class="top-header-meta">
+  <p>Welcome to <span>Krishi Vyahan</span>, we hope you will enjoy our products and have good experience</p>
+  </div>
+  
+  <div class="top-header-meta text-right">
+    <div class="top-header-meta text-right">
+      <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: <span class="__cf_email__" data-cfemail="8ae3e4ece5eeefeff8e9f8efebfee3fcefcaede7ebe3e6a4e9e5e7">[email&#160;protected]</span></span></a>
+      <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +84 223 9000</span></a>
+      </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <%-include('./partials/navbar.ejs')%>
+
+  <div class="search-form">
+  <form action="#" method="get">
+  <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+  <button type="submit" class="d-none"></button>
+  </form>
+  
+  <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </header>
+  <form action="/profile" method="POST" enctype="multipart/form-data">
+<div class="profile">
+<div class="container">
+  <div class="row gutters">
+  <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+  <div class="card h-100">
+    <div class="card-body m-0 p-0">
+      <div class="account-settings">
+        <div class="user-profile">
+          <div class="card-top"><h5 class="p-1">Profile</h5>
+          </div>
+
+
+          <div class="user-avatar">
+            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+          </div>
+          <!-- <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12"> -->
+            <div class="form-group">
+              <label for="Pic">Profile pic</label>
+              <input type="file" class="form-control" id="shadow" name="file">
+            </div>
+          <!-- </div> -->
+          <h5 class="user-name">Yuki Hayashi</h5>
+          <h6 class="user-email">yuki@Maxwell.com</h6>
+        </div>
+        <div class="about">
+          <h5>About</h5>
+          <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+    <%if(success !=''){ %>
+      <div class="card-body m-0 p-0">
+        <div class="alert alert-success" role="alert">
+          Success!!
+          <%=success %>
+        </div>
+        <%}%>
+  <div class="card h-100">
+    
+      
+      <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="card-top">
+          <h3 class="mb-5 p-1">Edit Your Profile</h3>
+          </div>
+        </div>
+        
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 ml-5">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" id="shadow" name="sellerName" placeholder="Enter full name" required>
+          </div>
+        </div>
+       
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 ">
+          <div class="form-group">
+            <label for="Street">District</label>
+            <input type="text" class="form-control" id="shadow" name="district" placeholder="Enter your District" required>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 ml-5">
+          <div class="form-group">
+            <label for="ciTy">Country</label>
+            <input type="text" class="form-control" id="shadow" name="country" placeholder="Enter your Country" required>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 ">
+          <div class="form-group">
+            <label for="sTate">State</label>
+            <input type="text" class="form-control" id="shadow" name="state" placeholder="Enter your State" required>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 ml-5">
+          <div class="form-group">
+            <label for="zIp">Contact</label>
+            <input type="number" class="form-control" id="shadow" name="contact" placeholder="Enter your Contact Details" required>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="card-top">
+          <h3 class="mb-5 p-1">Enter Crop Details</h3>
+        </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 ml-5">
+          <div class="form-group">
+            <label for="eMail">Crop Name</label>
+            <input type="text" class="form-control" name="item_name" id="shadow" placeholder="Enter Crop Name" required>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 ">
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" id="shadow" name="quantity" id="shadow" placeholder="Enter Quantity" required>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 ml-5">
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="shadow" name="price" id="shadow" placeholder="Enter Crop Price" required>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 ">
+          <div class="form-group">
+            <label for="Tprice">Transportation Price</label>
+            <input type="number" class="form-control" id="shadow" name="price_with_transportation" placeholder="Enter Transportation Price" required>
+          </div>
+        </div>
+      
+      </div>
+      <!-- </div> -->
+      <div class="row gutters">
+        <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 pb-4">
+          <div class="text-right">
+            <button type="button" id="submit" class="btn login-btn">Cancel</button>
+            <button type="submit" id="submit" class="btn login-btn">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+    </form>
+</div>
+</div>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+<%-include('./partials/footer.ejs')%>
+
+
+<%-include('./partials/javascript-links.ejs')%>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
