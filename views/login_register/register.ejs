@@ -83,13 +83,13 @@
 				<div class="classynav">
 					<ul>
 					<li class="active"><a href="/">Home</a></li>
-					<li><a href="#">Lab details</a></li>
-					<li><a href="#">Crop Recommendation</a>
+					<li><a href="/start">Lab details</a></li>
+					<li><a href="/start">Crop Recommendation</a>
 					</li>
-					<li><a href="#">Agro Insurance </a></li>
-					<li><a href="#">Transportation</a></li>
-					<li><a href="#">Govt schemes</a></li>
-					<li><a href="#">About us </a></li>
+					<li><a href="/start">Agro Insurance </a></li>
+					<li><a href="/start">Transportation</a></li>
+					<li><a href="/start">Govt schemes</a></li>
+					<li><a href="/start">About us </a></li>
 					</ul>
 					
 					
@@ -98,7 +98,7 @@
 					</div>
 					
 					<div id="cartIcon">
-					<a href="#">
+					<a href="/start">
 					<i class="icon_cart_alt" aria-hidden="true"></i>
 					</a>
 					</div>
@@ -124,6 +124,7 @@
 			</div>
 			</div>
 			</header>
+
 <section class="register-form my-4 mx-5">
 	<div class="container p-0">
 <div class="row row-register">
@@ -132,6 +133,64 @@
 	border-top-left-radius: 30px;" class="img-fluid" alt="">
 </div>
 <div class="col-lg-5 p-0">
+	<%if(error!=""){ %>
+		<div class="card-body m-0 p-0">
+			<div class="alert alert-danger" role="alert" style="margin-top: 20px; margin-right: 25px;">
+			  Error!! User Already Registered 
+
+			 <div> <%=error %> </div>
+			</div>
+		<h1 style="margin-top: 5%">Register form</h1>
+		<h6>Enter your details here</h6>
+	<form action="/register" method="POST">
+		<div class="reg-form-row" >
+			<div class="col-lg-10 p-0 m-0">
+			<input type="text" name="truename" placeholder="Username *"  style=" border-color: white; box-shadow: 10px 10px 10px rgb(119, 116, 116)"  class="control my-2 p-2" required>
+			<input type="password" name="password" placeholder="Password *"  style=" border-color: white; box-shadow: 10px 10px 10px rgb(119, 116, 116)"  class="control my-2 p-2" required>
+		</div>
+		</div>
+		<div class="reg-form-row">
+			<div class="col-lg-10 p-0">
+		<input type="number" name="username" placeholder="Phone number *" style=" border-color: white; box-shadow: 10px 10px 10px rgb(119, 116, 116)" class="control my-2 p-2" required> 
+		<input type="email" name="email" placeholder="Email"  style=" border-color: white; box-shadow: 10px 10px 10px rgb(119, 116, 116)"  class="control my-2 p-2">
+		</div>
+		</div>
+		<div class="reg-form-row">
+			<div class="col-lg-10"></div>
+		<input type="radio" value="seller" name="type"required>
+		<label for="seller" class="radio my-4">Seller</label>&nbsp;
+		<input type="radio" value="consumer" name="type" required>
+		<label for="sonsumer" class="radio">Consumer</label><br>
+		</div>
+		<div class="reg-form-row">
+			<div class="col-lg-10 p-0">
+		<button class="btn signin-btn mt-3 mb-3">Register</button>
+		</div>
+		</div>
+		<a href="#">Forget Password?</a>
+		<p>Already registered User? &nbsp;<a href="/start">Login here</a></p>
+	</form>
+	</div>
+	</div>
+		</div>
+	</section>
+
+	<%}%>
+	<%if(error==""){ %>
+
+	<%if(data=="seller"){ %>
+		<div class="card-body m-0 p-0">
+			<div class="alert alert-success" role="alert" style="margin-top: 35px; margin-right: 25px;">
+				Success!! User Registered Successfully
+			</div>
+	<%}%>
+	<%if(data=="consumer"){ %>
+		<div class="card-body m-0 p-0">
+			<div class="alert alert-success" role="alert" style="margin-top: 35px; margin-right: 25px;">
+				Success!! User Registered Successfully
+			</div>
+	<%}%>		
+
 	<h1 style="margin-top: 10%;">Register form</h1>
 	<h6>Enter your details here</h6>
 <form action="/register" method="POST">
@@ -144,7 +203,7 @@
 	<div class="reg-form-row">
 		<div class="col-lg-10 p-0">
 	<input type="number" name="username" placeholder="Phone number *" style=" border-color: white; box-shadow: 10px 10px 10px rgb(119, 116, 116)" class="control my-2 p-2" required> 
-	<input type="email" name="email" placeholder="Email"  style=" border-color: white; box-shadow: 10px 10px 10px rgb(119, 116, 116)"  class="control my-2 p-2" required>
+	<input type="email" name="email" placeholder="Email"  style=" border-color: white; box-shadow: 10px 10px 10px rgb(119, 116, 116)"  class="control my-2 p-2">
 	</div>
 	</div>
 	<div class="reg-form-row">
@@ -166,7 +225,7 @@
 </div>
 	</div>
 </section>
-
+<%}%>
 
 
 

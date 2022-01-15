@@ -183,12 +183,11 @@ app.get("/profile",isLoggedIn,(req,res)=>{
   // SEARCHING ON THE BASIS OF ENTERED VALUE
   // ======================================
   app.post("/search_cropa",(req,res)=>{
-    console.log(req.body.search);
     Crop.find({},(err,crop)=>{
       if(err){
         console.log(err);
       }
-      res.render("./seller/cropa",{data:crop,val:req.body.search});
+      res.render("./seller/cropa",{data:crop,val:req.body.search,hi:req.body});
     })
   })
 
@@ -227,18 +226,13 @@ app.get("/Home_consumer",isLoggedIn,(req,res)=>{
 app.get("/logc", function (req, res) {
  res.render("./consumer/logc");
 });
-app.get("/consumer_cropr",isLoggedIn,(req,res)=>{
-  res.render("./consumer/consumer_cropr");
-})
 app.get("/consumer_about_us",isLoggedIn,(req,res)=>{
   res.render("./consumer/consumer_about_us");
 })
 app.get("/consumer_govtschemes",isLoggedIn,(req,res)=>{
   res.render("./consumer/consumer_govtschemes");
 })
-app.get("/consumer_crop_page",isLoggedIn,(req,res)=>{
-  res.render("./consumer/consumer_crop_page");
-})
+
 
 
 // ROUTES FOR FETCHING API'S FOR CONSUMER USING REQUEST METHOD
@@ -286,7 +280,7 @@ response.render("./consumer/consumer_shop",{data:body.shop});
   // =====================================
 
   app.get("/register", function (req, res) {
-    res.render("./login_register/register");
+    res.render("./login_register/register",{data:req.body.type,error:""});
     });
     app.post("/register", function (req, res) {
       var user = {  
@@ -296,22 +290,26 @@ response.render("./consumer/consumer_shop",{data:body.shop});
         truename: req.body.truename,
       };
       User.register(new User(user), req.body.password, function (err, user) {
-        if (err) {
+        if (err) {  
           console.log("OOPS SOMETHING WENT WRONG!!");
           console.log(err);
-          return res.render("./login_register/register");
+          return res.render("./login_register/register",{data:req.body.type,error:"Use Different Contact To Register"});
         }
         passport.authenticate("local")(req, res, function () {
           // TO LOGIN THE USER
           // =================
           User.findOne({ username: user.username }, function (err, user) {
-        if (err) console.log("error");
+            console.log(user);
+        if (err){
+          console.log("error");
+          res.render("./login_register/register")
+        } 
         if(user.type == "seller"){ 
           alert("Successfully Registered")
-          return res.render("./seller/Home_seller");}
+          return res.render("./login_register/register",{error:"",data:req.body.type});}
         if(user.type == "consumer"){ 
           alert("Successfully Registered")
-          return res.render("./consumer/Home_consumer");}
+          return res.render("./consumer/logc",{error:"",data:req.body.type});}
         else alert("invalid user");
         return res.redirect("/start");
       });
@@ -359,6 +357,7 @@ app.get("/loginc", function (req, res, next) {
       return next(err);
     }
     if (!user) {
+      alert("Invalid User")
       return res.redirect("/start");
     }
     req.logIn(user, function (err) {

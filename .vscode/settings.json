@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d2c1ddc0-3b56-42fa-af66-0335791f74e2/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Microsoft-ideathon",
+    "appService.deploySubpath": "."
+}

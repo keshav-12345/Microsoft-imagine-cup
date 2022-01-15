@@ -149,7 +149,7 @@
     <div class="shop-filters mb-30 d-flex align-items-center justify-content-between">
     
     <div class="product-show">
-    <h6>This feature is basically recommends you from the given table that which crop is best suitable for you to grow </h6>
+    <h6> This feature basically helps you to guide from the table that what should be the right parameters to grow which crop </h6>
     </div>
     
     <div class="produtc-view-mode">
@@ -177,14 +177,15 @@
       </th>
       <th class="th-sm">Rainfall
       </th>
-      <th class="th-sm">Price
+      <th class="th-sm">Nitrogen
       </th>
       <th class="th-sm">Crop
       </th>
     </tr>
   </thead>
   <tbody>
- 
+
+    
     <%for(var i=0;i<data.length;i++){ %>
         <tr>
           <%if(data[i].crop==val){%>
@@ -193,27 +194,19 @@
           <td style="background-color: aqua;"><%=data[i].humidity%></td>
           <td style="background-color: aqua;"><%=data[i].Ph%></td>
           <td style="background-color: aqua;"><%=data[i].rainfall%></td>
-          <td style="background-color: aqua;"><%=data[i].crop%></td>
           <td style="background-color: aqua;"><%=data[i].price%></td>
+          <td style="background-color: aqua;"><%=data[i].crop%></td>
           <%}%>
           <%if(data[i].crop!=val){ %>
-          <td> <%=data[i].soil%></td>
-          <td><%=data[i].temperature%></td>
-          <td><%=data[i].humidity%></td>
-          <td><%=data[i].Ph%></td>
-          <td><%=data[i].rainfall%></td>
-          <td><%=data[i].crop%></td>
-          <td><%=data[i].price%></td>
           <%}%>
         </tr>
       <%}%>
-
+    
   </tbody>
 </table>
 </div>
 </div>
 </div>
-
 <!---------------- FOOTER ------------------>
 <%-include('./partials/footer.ejs')%>
 
