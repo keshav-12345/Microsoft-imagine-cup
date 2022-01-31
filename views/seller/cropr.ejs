@@ -34,7 +34,7 @@
 
 <div class="top-header-meta text-right">
   <div class="top-header-meta text-right">
-    <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: <span class="__cf_email__" data-cfemail="8ae3e4ece5eeefeff8e9f8efebfee3fcefcaede7ebe3e6a4e9e5e7">[email&#160;protected]</span></span></a>
+    <a href="#" data-toggle="tooltip" data-placement="bottom" title="krishivyahan@test.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: <span class="__cf_email__" data-cfemail="8ae3e4ece5eeefeff8e9f8efebfee3fcefcaede7ebe3e6a4e9e5e7">krishivyahan@test.com</span></span></a>
     <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +84 223 9000</span></a>
     </div>
 </div>
@@ -225,14 +225,12 @@
    <tbody>
    
   
-
 <%for(var i=0;i<data.length;i++){ %>
   <tr>
     <%if(success!=""){%>
 <h3 style="text-align: center;">The Crop Recommended For You Is :</h3>
 <h1 style="text-align: center; background-color: aqua; text-transform: uppercase;"> <%=data[i].crop%></h1>
-
-<td > <%=data[i].soil%></td>
+    <td><%=data[i].soil%></td>
     <td><%=data[i].temperature%></td>
     <td><%=data[i].humidity%></td>
     <td><%=data[i].Ph%></td>
@@ -249,6 +247,7 @@
     <td><%=data[i].price%></td>
     <td><%=data[i].crop%></td>
     <%}%>
+  
   </tr>
 <%}%>
 

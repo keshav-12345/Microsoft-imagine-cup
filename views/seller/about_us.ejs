@@ -35,7 +35,7 @@
 
 <div class="top-header-meta text-right">
    <div class="top-header-meta text-right">
-    <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: <span class="__cf_email__" data-cfemail="8ae3e4ece5eeefeff8e9f8efebfee3fcefcaede7ebe3e6a4e9e5e7">[email&#160;protected]</span></span></a>
+    <a href="#" data-toggle="tooltip" data-placement="bottom" title="krishivyahan@test.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: <span class="__cf_email__" data-cfemail="8ae3e4ece5eeefeff8e9f8efebfee3fcefcaede7ebe3e6a4e9e5e7">krishivyahan@test.com</span></span></a>
     <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +84 223 9000</span></a>
     </div>
 </div>
@@ -45,7 +45,63 @@
 </div>
 </div>
 <!----------------- NAVBAR ---------------->
-<%-include('./partials/navbar.ejs')%>
+
+<div class="famie-main-menu">
+  <div class="classy-nav-container breakpoint-off">
+  <div class="container ">
+<nav class="classy-navbar justify-content-between" id="famieNav">
+    <a href="/" class="nav-brand"><img src="img/core-img/krishi.jpeg" alt=""></a>
+    <div class="classy-navbar-toggler">
+    <span class="navbarToggler"><span></span><span></span><span></span></span>
+    </div>
+    <div class="classy-menu">
+    <div class="classycloseIcon">
+    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+    </div>
+    
+    <div class="classynav">
+    
+    <ul>
+    <li><a href="/Home_seller">Home</a></li>
+    <span class="dropdown show mx-2">
+      <a class="dropbtn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        FEATURES
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="/lab">Lab details</a>
+        <a class="dropdown-item" href="/insurance">Agro Insurance</a>
+        <a class="dropdown-item" href="/crop_page">Crop Recommendation</a>
+      </div>
+    </span>
+    <li><a href="/Reupyog">ReUpyog</a></li>
+    <li><a href="/transportation">Transportation</a></li>
+    <li><a href="/govtschemes">Govt Schemes</a></li>
+    <li class="active"><a href="/about_us">About us </a></li>
+    </ul>
+    
+    
+    
+    <div id="searchIcon">
+    <i class="icon_search" aria-hidden="true"></i>
+    </div>
+    
+    <div id="cartIcon">
+    <a href="/shop">
+    <i class="icon_cart_alt" aria-hidden="true"></i>
+    </a>
+    </div>
+    <div id="logoutIcon"> 
+    <a href="/logout">
+      <i class="fa fa-sign-out"></i>
+    </a>
+    </div>
+    <a href="/profile">
+      <i class="fa fa-user fa-2x" aria-hidden="true"> </i>
+    </a>
+    </div>
+    </div>
+    </nav>
+    
     
 
 

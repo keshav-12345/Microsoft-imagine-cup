@@ -51,7 +51,8 @@ a:hover {
   font-family: "Karla", sans-serif; }
 
 ul {
-  margin: 0; }
+  margin: 0;
+list-style-type: none; }
   ul li {
     list-style: none; }
 
@@ -511,32 +512,44 @@ input:focus {
         @media only screen and (max-width: 767px) {
           .header-area .famie-main-menu .classy-navbar .nav-brand {
             max-width: 110px; } }
-      .header-area .famie-main-menu .classy-navbar .classynav ul li a {
+      .header-area .famie-main-menu .classy-navbar .classynav ul li a{
         font-weight: 400;
         text-transform: uppercase;
         font-size: 14px;
         color: #303030; }
-        .header-area .famie-main-menu .classy-navbar .classynav ul li a:focus, .header-area .famie-main-menu .classy-navbar .classynav ul li a:hover {
+        .header-area .famie-main-menu .classy-navbar .classynav ul li a:hover{
+          color: #77b122;
+        }
+
+     .header-area .famie-main-menu .classy-navbar .classynav ul li.active::after{
+      content: "";
+      position: absolute;
+      background-color: #77b122;
+      height: 4px;
+      width: 100%;
+      left: 0;
+      bottom: -10px;
+      transition: 0.3s;    
+      animation: appear 1.5s linear; 
+        }
+        @keyframes appear{
+          from{
+            width: 0;
+          }
+          to{
+            width: 100%;
+          }
+        }
+        .header-area .famie-main-menu .classy-navbar .classynav ul li.active {
           color: #77b122; }
-      .header-area .famie-main-menu .classy-navbar .classynav ul li ul li a {
-        text-transform: capitalize;
-        padding: 0 10px;
-        font-size: 14px;
-        color: #0f1112;
-        line-height: 34px;
-        height: 35px; }
-        @media only screen and (min-width: 768px) and (max-width: 991px) {
-          .header-area .famie-main-menu .classy-navbar .classynav ul li ul li a {
-            color: #707070; } }
-        @media only screen and (max-width: 767px) {
-          .header-area .famie-main-menu .classy-navbar .classynav ul li ul li a {
-            color: #707070; } }
-        .header-area .famie-main-menu .classy-navbar .classynav ul li ul li a::after {
-          color: #0f1112; }
-        .header-area .famie-main-menu .classy-navbar .classynav ul li ul li a:focus, .header-area .famie-main-menu .classy-navbar .classynav ul li ul li a:hover {
-          color: #77b122; }
-      .header-area .famie-main-menu .classy-navbar .classynav ul li.active a {
-        color: #77b122; }
+
+        .header-area .famie-main-menu .classy-navbar .classynav ul li {
+cursor: pointer;
+position: relative;
+text-align: center;
+           }
+
+      
   .header-area .is-sticky .famie-main-menu {
     z-index: 9999;
     box-shadow: 0 5px 50px 0 rgba(0, 0, 0, 0.2); }
@@ -904,7 +917,6 @@ padding: 5%; }
   border-radius: 13px;
   background: white;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
-  font-family: roboto;
   text-align: left;
   transition: 0.5s ease;
   cursor: pointer;
@@ -919,6 +931,36 @@ padding: 5%; }
   border-radius: 13px;
   background: white;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family: roboto;
+  text-align: left;
+  transition: 0.5s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.Upyogcard{
+  position: relative;
+  z-index: 1;
+  display: grid;
+   grid-template-columns: 254x;
+   grid-template-rows: 300px 200px 8px;  
+  border-radius: 13px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family: roboto;
+  text-align: left;
+  transition: 0.5s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.Videos{
+  position: relative;
+  z-index: 1;
+  display: grid;
+   grid-template-columns: 254x;
+   grid-template-rows: 300px 200px 8px;  
+  border-radius: 13px;
+  background: white;
+  /* box-shadow: 5px 5px 15px rgba(0,0,0,0.9); */
   font-family: roboto;
   text-align: left;
   transition: 0.5s ease;
@@ -949,6 +991,10 @@ background-color: #77b144; }
   box-shadow:10px 10px 20px rgba(0,0,0,0.6);
 }
 .product:hover {
+  transform: scale(0.5);
+  box-shadow:10px 10px 20px rgba(0,0,0,0.6);
+}
+.Upyogcard:hover {
   transform: scale(1.1);
   box-shadow:10px 10px 20px rgba(0,0,0,0.6);
 }
@@ -2031,6 +2077,36 @@ textarea.form-control {
     width: 400px;
     overflow: hidden;
   }
+  .dropdown .dropbtn { 
+    border: none;
+    background-color: inherit;
+    margin: 0;
+  }
+  .dropdown:hover .dropbtn {
+    color: #77b122;
+  }
+  .dropdown-menu {
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-item {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  .dropdown-menu a:hover{
+    color: #77b122;
+  }
   .govt-sc-img{
     width: 350px;
     height: 330px;
@@ -2118,6 +2194,9 @@ display: block;
           border: 0;
           margin-bottom: 1rem;
           box-shadow: 13px 3px 26px;
+      }
+      .card .col-6{
+margin-top: 5%;
       }
       #shadow{
         box-shadow: 10px 10px 10px;
@@ -2380,8 +2459,8 @@ height: 110%;
 
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   perspective: 1000px;
   display: grid;
   margin: auto;
@@ -2415,6 +2494,10 @@ height: 110%;
   background-color: white;
   color: black;
 }
+.flip-card-front img{
+  width: 400px;
+  height: 400px;
+}
 
 .flip-card-back {
   /* background-color: #2980b9; */
@@ -2423,6 +2506,8 @@ height: 110%;
   color: white;
   transform: rotateY(180deg);
 }
-
+.flip-card-back p{
+  margin-top: 80px;
+}
 
 }

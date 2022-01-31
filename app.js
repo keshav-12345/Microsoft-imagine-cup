@@ -11,6 +11,7 @@ var express = require("express"),
   mongoose = require("mongoose"),
   path = require("path"),
   alert = require("alert"),
+  axios=require("axios").default,
   request = require("request"),
   multer=require("multer"),
  res = require("express/lib/response");
@@ -83,19 +84,26 @@ app.get("/Home_seller",isLoggedIn,(req,res)=>{
   app.get("/about_us", isLoggedIn, function (req, res) {
     res.render("./seller/about_us");
   });
-app.get("/govtschemes", isLoggedIn, function (req, res) {
-  res.render("./seller/govtschemes");
-});
-app.get("/crop_page",isLoggedIn, function (req, res) {
-  res.render("./seller/crop_page");
-});
-app.get("/logs", function (req, res) {
-  res.render("./seller/logs");
-});
-app.get("/profile",isLoggedIn,(req,res)=>{
-  res.render("./seller/profile",{success:""});
-})
-
+  app.get("/govtschemes", isLoggedIn, function (req, res) {
+    res.render("./seller/govtschemes");
+  });
+  app.get("/crop_page",isLoggedIn, function (req, res) {
+    res.render("./seller/crop_page");
+  });
+  app.get("/logs", function (req, res) {
+    res.render("./seller/logs");
+  });
+  app.get("/profile",isLoggedIn,(req,res)=>{
+    res.render("./seller/profile",{success:""});
+  });
+  app.get("/Reupyog",(req,res)=>{
+    res.render("./seller/Reupyog")
+  });
+  app.get("/Upyog",(req,res)=>{
+    res.render("./seller/Upyog");
+  });
+ 
+  
 //MAKING ROUTES FOR FETCHING API'S USING REQUEST METHOD FOR SELLER
 //================================================================
       app.get("/transportation",isLoggedIn, function (req, response) {
@@ -132,10 +140,28 @@ app.get("/profile",isLoggedIn,(req,res)=>{
       response.render("./seller/shop",{data:body.shop});
     })
   });
+  //=====================================
+  //ROUTES OF POST REQUEST FROM REUPYOG TO UPYOG
+  // ======================================
+app.post("/Upyog",(req,res)=>{
+var flashval=req.body.flashcard;
+const REUPYOG = async () => {
+      try {
+      const resp = await axios.get(`https://krishi-vyahan.herokuapp.com/get_reupyog/?category_id=${flashval}`);
+          return res.render("./seller/Upyog",{hello:resp.data.ReUpyog})
+      } catch (err) {
+          console.error(err);
+      }
+  };
+  REUPYOG();
+  })
+
+
+
   // ===========================================================
   // ROUTE FOR SELLER'S PROFILE PAGE FOR POSTTING DATA FROM FORM
   // ===========================================================
-  app.post("/profile",upload ,(req,res)=>{
+  app.post("/profile",upload,(req,res)=>{
     const seller =new Seller({
       sellerName:req.body.sellerName,
       item_name:req.body.item_name,
@@ -217,6 +243,7 @@ app.get("/profile",isLoggedIn,(req,res)=>{
   })
 })
 
+
 // ROUTES FOR CONSUMER
 // ===================
 
@@ -232,7 +259,9 @@ app.get("/consumer_about_us",isLoggedIn,(req,res)=>{
 app.get("/consumer_govtschemes",isLoggedIn,(req,res)=>{
   res.render("./consumer/consumer_govtschemes");
 })
-
+app.get("/consumer_Reupyog",isLoggedIn,(req,res)=>{
+res.render("./consumer/consumer_Reupyog");
+})
 
 
 // ROUTES FOR FETCHING API'S FOR CONSUMER USING REQUEST METHOD
@@ -338,8 +367,7 @@ app.get("/logins", function (req, res, next) {
         return next(err);
       }
       User.findOne({ username: user.username }, function (err, user) {
-        if (err) console.log("error");
-        console.log(user);
+        if (err) {console.log("error");}
         if (user.type == "seller") return res.redirect("/Home_seller");
         else alert("invalid user");
         return res.redirect("/start");
